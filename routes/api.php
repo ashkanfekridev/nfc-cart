@@ -49,7 +49,7 @@ Route::group([
     Route::post('/admin/users/store', [AdminUserController::class, 'store'])
         ->name('api.admin.user.store');
 
-    Route::resource('users', AdminUserController::class);
+    Route::resource('users', AdminUserController::class)->only(['store', 'index']);
 
 });
 

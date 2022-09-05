@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "f30ff501-55b5-46e3-aff7-a4ad74bfbb33",
+		"name": "nfc-card-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8265145"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/register?user_name=ashkan&password=abcdefgh&phone_number=09116169846&email=ashkanfekridev@gmail.com&fa_first_name=اشکان&fa_last_name=فکری&en_first_name=ashkan&en_last_name=fekri",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "ashkan"
+								},
+								{
+									"key": "password",
+									"value": "abcdefgh"
+								},
+								{
+									"key": "phone_number",
+									"value": "09116169846"
+								},
+								{
+									"key": "email",
+									"value": "ashkanfekridev@gmail.com"
+								},
+								{
+									"key": "fa_first_name",
+									"value": "اشکان"
+								},
+								{
+									"key": "fa_last_name",
+									"value": "فکری"
+								},
+								{
+									"key": "en_first_name",
+									"value": "ashkan"
+								},
+								{
+									"key": "en_last_name",
+									"value": "fekri"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_name",
+									"value": "ashkan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abcdefgh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/user/:username",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "ashkan"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_name",
+											"value": "ash",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "09116655666",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "fa_first_name",
+											"value": "ash",
+											"type": "text"
+										},
+										{
+											"key": "fa_last_name",
+											"value": "ash",
+											"type": "text"
+										},
+										{
+											"key": "en_first_name",
+											"value": "ash",
+											"type": "text"
+										},
+										{
+											"key": "en_last_name",
+											"value": "ash",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ash@g.com",
+											"type": "text"
+										},
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/ashkan/Pictures/image 1.png"
+										},
+										{
+											"key": "type",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "fa_description",
+											"value": "سلام",
+											"type": "text"
+										},
+										{
+											"key": "en_description",
+											"value": "hello",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/admin/user/store",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"user",
+										"store"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/admin/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "4|atZvr0GX32AffznSfYOjlP3017bd6Hs8OnsbdFUR",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
